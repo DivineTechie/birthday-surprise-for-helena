@@ -1,240 +1,232 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday, My Princess Helena 💖</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #fff8f2, #f8efe4, #f4e6d8);
+    font-family: 'Georgia', serif;
+    color: #6b4a2b;
+    overflow: hidden;
+    height: 100vh;
+  }
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-<meta charset="UTF-8" />\
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />\
-<title>Happy Birthday, My Princess Helena \uc0\u55357 \u56470 </title>\
-<style>\
-  body \{\
-    margin: 0;\
-    padding: 0;\
-    background: linear-gradient(180deg, #fff8f2, #f8efe4, #f4e6d8);\
-    font-family: 'Georgia', serif;\
-    color: #6b4a2b;\
-    overflow: hidden;\
-    height: 100vh;\
-  \}\
-\
-  #text-container \{\
-    display: flex;\
-    justify-content: center;\
-    align-items: center;\
-    height: 100vh;\
-    text-align: center;\
-    font-size: 1.8rem;\
-    padding: 0 20px;\
-  \}\
-\
-  #typing \{\
-    display: inline-block;\
-    border-right: 2px solid rgba(107, 74, 43, 0.75);\
-    white-space: pre-wrap;\
-    word-wrap: break-word;\
-    max-width: 90vw;\
-    overflow-wrap: break-word;\
-    text-align: center;\
-  \}\
-\
-  @keyframes blink-caret \{\
-    from, to \{ border-color: transparent; \}\
-    50% \{ border-color: rgba(107, 74, 43, 0.75); \}\
-  \}\
-\
-  #fireworks \{\
-    position: fixed;\
-    top: 0; left: 0;\
-    width: 100%;\
-    height: 100%;\
-    pointer-events: none;\
-    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);\
-    z-index: 5;\
-  \}\
-\
-  #birthday-message \{\
-    position: absolute;\
-    top: 50%;\
-    left: 50%;\
-    transform: translate(-50%, -50%);\
-    font-size: 2rem;\
-    color: #b68b5d;\
-    text-shadow: 2px 2px 4px #fff;\
-    display: none;\
-    text-align: center;\
-    padding: 0 20px;\
-  \}\
-\
-  /* \uc0\u10024  Final glowing Happy Birthday text */\
-  #final-message \{\
-    position: absolute;\
-    bottom: 10%;\
-    left: 50%;\
-    transform: translateX(-50%);\
-    font-size: 3rem;\
-    font-weight: bold;\
-    color: #d4a574;\
-    text-shadow: 0 0 15px #fff6e0, 0 0 30px #ffdfb3, 0 0 45px #ffe3c4;\
-    opacity: 0;\
-    animation: fadeInGlow 3s ease-in forwards;\
-    display: none;\
-    z-index: 10;\
-  \}\
-\
-  @keyframes fadeInGlow \{\
-    0% \{ opacity: 0; text-shadow: none; transform: translateX(-50%) scale(0.95); \}\
-    50% \{ opacity: 0.8; text-shadow: 0 0 20px #fff2c6, 0 0 35px #ffe1ad; \}\
-    100% \{ opacity: 1; text-shadow: 0 0 25px #ffe8c8, 0 0 50px #ffd59b; transform: translateX(-50%) scale(1); \}\
-  \}\
-\
-  @media (max-width: 768px) \{\
-    #text-container \{ font-size: 1.2rem; \}\
-    #birthday-message \{ font-size: 1.4rem; \}\
-    #final-message \{ font-size: 2rem; bottom: 8%; \}\
-  \}\
-</style>\
-</head>\
-<body>\
-\
-<div id="text-container"><div id="typing"></div></div>\
-<canvas id="fireworks"></canvas>\
-<div id="birthday-message">\uc0\u55356 \u57218  Happy Birthday, My Princess Helena \u55357 \u56470 <br><br>May your day sparkle as brightly as my world does with you in it \u10024 </div>\
-\
-<!-- \uc0\u10024  Added this beautiful final line -->\
-<div id="final-message">\uc0\u55357 \u56470  Happy Birthday, Helena \u55357 \u56470 </div>\
-\
-<script>\
-const messages = [\
-  "Since the day we met...",\
-  "You've made me feel special and warm.",\
-  "Every day with you feels like a soft sunrise in my heart.",\
-  "Your smile brightens my world brighter than any star.",\
-  "I never knew someone could mean so much until you did.",\
-  "And today, the whole universe celebrates the day you came into it...",\
-  "Because you are magic, my princess Helena \uc0\u55357 \u56470 "\
-];\
-\
-const textEl = document.getElementById("typing");\
-let msgIndex = 0;\
-\
-function typeMessage(message, callback) \{\
-  let i = 0;\
-  textEl.textContent = "";\
-  const interval = setInterval(() => \{\
-    textEl.textContent += message.charAt(i);\
-    i++;\
-    if (i === message.length) \{\
-      clearInterval(interval);\
-      setTimeout(callback, 1000);\
-    \}\
-  \}, 50);\
-\}\
-\
-function startTyping() \{\
-  if (msgIndex < messages.length) \{\
-    typeMessage(messages[msgIndex], () => \{\
-      msgIndex++;\
-      startTyping();\
-    \});\
-  \} else \{\
-    startFireworks();\
-    setTimeout(() => \{\
-      document.getElementById("birthday-message").style.display = "block";\
-    \}, 800);\
-    setTimeout(() => \{\
-      document.getElementById("final-message").style.display = "block";\
-    \}, 2500); // show the glowing text a bit later for effect\
-  \}\
-\}\
-\
-startTyping();\
-\
-// --- Fireworks effect ---\
-const canvas = document.getElementById('fireworks');\
-const ctx = canvas.getContext('2d');\
-let fireworks = [];\
-\
-function resizeCanvas() \{\
-  canvas.width = window.innerWidth;\
-  canvas.height = window.innerHeight;\
-\}\
-window.addEventListener('resize', resizeCanvas);\
-resizeCanvas();\
-\
-function random(min, max) \{\
-  return Math.random() * (max - min) + min;\
-\}\
-\
-class Firework \{\
-  constructor(x, y, color) \{\
-    this.x = x;\
-    this.y = y;\
-    this.color = color;\
-    this.particles = [];\
-    for (let i = 0; i < 100; i++) \{\
-      this.particles.push(\{\
-        x: x,\
-        y: y,\
-        angle: Math.random() * 2 * Math.PI,\
-        speed: random(1, 5),\
-        radius: random(1, 3),\
-        life: random(50, 150)\
-      \});\
-    \}\
-  \}\
-\
-  update() \{\
-    this.particles.forEach(p => \{\
-      p.x += Math.cos(p.angle) * p.speed;\
-      p.y += Math.sin(p.angle) * p.speed + 0.5;\
-      p.life -= 1;\
-    \});\
-  \}\
-\
-  draw(ctx) \{\
-    this.particles.forEach(p => \{\
-      if (p.life > 0) \{\
-        ctx.beginPath();\
-        ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);\
-        ctx.fillStyle = this.color;\
-        ctx.fill();\
-      \}\
-    \});\
-  \}\
-\
-  isDead() \{\
-    return this.particles.every(p => p.life <= 0);\
-  \}\
-\}\
-\
-function startFireworks() \{\
-  setInterval(() => \{\
-    const x = random(100, canvas.width - 100);\
-    const y = random(100, canvas.height / 2);\
-    const color = `hsl($\{random(0, 360)\}, 100%, 70%)`;\
-    fireworks.push(new Firework(x, y, color));\
-  \}, 800);\
-\
-  function animate() \{\
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';\
-    ctx.fillRect(0, 0, canvas.width, canvas.height);\
-\
-    fireworks.forEach(fw => \{\
-      fw.update();\
-      fw.draw(ctx);\
-    \});\
-\
-    fireworks = fireworks.filter(fw => !fw.isDead());\
-    requestAnimationFrame(animate);\
-  \}\
-  animate();\
-\}\
-</script>\
-</body>\
-</html>\
+  #text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 0 20px;
+  }
+
+  #typing {
+    display: inline-block;
+    border-right: 2px solid rgba(107, 74, 43, 0.75);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 90vw;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgba(107, 74, 43, 0.75); }
+  }
+
+  #fireworks {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    z-index: 5;
+  }
+
+  #birthday-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #b68b5d;
+    text-shadow: 2px 2px 4px #fff;
+    display: none;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  /* ✨ Final glowing Happy Birthday text */
+  #final-message {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #d4a574;
+    text-shadow: 0 0 15px #fff6e0, 0 0 30px #ffdfb3, 0 0 45px #ffe3c4;
+    opacity: 0;
+    animation: fadeInGlow 3s ease-in forwards;
+    display: none;
+    z-index: 10;
+  }
+
+  @keyframes fadeInGlow {
+    0% { opacity: 0; text-shadow: none; transform: translateX(-50%) scale(0.95); }
+    50% { opacity: 0.8; text-shadow: 0 0 20px #fff2c6, 0 0 35px #ffe1ad; }
+    100% { opacity: 1; text-shadow: 0 0 25px #ffe8c8, 0 0 50px #ffd59b; transform: translateX(-50%) scale(1); }
+  }
+
+  @media (max-width: 768px) {
+    #text-container { font-size: 1.2rem; }
+    #birthday-message { font-size: 1.4rem; }
+    #final-message { font-size: 2rem; bottom: 8%; }
+  }
+</style>
+</head>
+<body>
+
+<div id="text-container"><div id="typing"></div></div>
+<canvas id="fireworks"></canvas>
+<div id="birthday-message">🎂 Happy Birthday, My Princess Helena 💖<br><br>May your day sparkle as brightly as my world does with you in it ✨</div>
+
+<!-- ✨ Added this beautiful final line -->
+<div id="final-message">💖 Happy Birthday, Helena 💖</div>
+
+<script>
+const messages = [
+  "Since the day we met...",
+  "You've made me feel special and warm.",
+  "Every day with you feels like a soft sunrise in my heart.",
+  "Your smile brightens my world brighter than any star.",
+  "I never knew someone could mean so much until you did.",
+  "And today, the whole universe celebrates the day you came into it...",
+  "Because you are magic, my princess Helena 💖"
+];
+
+const textEl = document.getElementById("typing");
+let msgIndex = 0;
+
+function typeMessage(message, callback) {
+  let i = 0;
+  textEl.textContent = "";
+  const interval = setInterval(() => {
+    textEl.textContent += message.charAt(i);
+    i++;
+    if (i === message.length) {
+      clearInterval(interval);
+      setTimeout(callback, 1000);
+    }
+  }, 50);
 }
+
+function startTyping() {
+  if (msgIndex < messages.length) {
+    typeMessage(messages[msgIndex], () => {
+      msgIndex++;
+      startTyping();
+    });
+  } else {
+    startFireworks();
+    setTimeout(() => {
+      document.getElementById("birthday-message").style.display = "block";
+    }, 800);
+    setTimeout(() => {
+      document.getElementById("final-message").style.display = "block";
+    }, 2500); // show the glowing text a bit later for effect
+  }
+}
+
+startTyping();
+
+// --- Fireworks effect ---
+const canvas = document.getElementById('fireworks');
+const ctx = canvas.getContext('2d');
+let fireworks = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function random(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+class Firework {
+  constructor(x, y, color) {
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.particles = [];
+    for (let i = 0; i < 100; i++) {
+      this.particles.push({
+        x: x,
+        y: y,
+        angle: Math.random() * 2 * Math.PI,
+        speed: random(1, 5),
+        radius: random(1, 3),
+        life: random(50, 150)
+      });
+    }
+  }
+
+  update() {
+    this.particles.forEach(p => {
+      p.x += Math.cos(p.angle) * p.speed;
+      p.y += Math.sin(p.angle) * p.speed + 0.5;
+      p.life -= 1;
+    });
+  }
+
+  draw(ctx) {
+    this.particles.forEach(p => {
+      if (p.life > 0) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    });
+  }
+
+  isDead() {
+    return this.particles.every(p => p.life <= 0);
+  }
+}
+
+function startFireworks() {
+  setInterval(() => {
+    const x = random(100, canvas.width - 100);
+    const y = random(100, canvas.height / 2);
+    const color = `hsl(${random(0, 360)}, 100%, 70%)`;
+    fireworks.push(new Firework(x, y, color));
+  }, 800);
+
+  function animate() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    fireworks.forEach(fw => {
+      fw.update();
+      fw.draw(ctx);
+    });
+
+    fireworks = fireworks.filter(fw => !fw.isDead());
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+</script>
+</body>
+</html>
